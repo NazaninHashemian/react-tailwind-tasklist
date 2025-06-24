@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import TaskList from "./components/TaskList";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+  const [tasks, setTasks] = useState([
+    {
+      id: 1,
+      title: "Learn Tailwind CSS",
+      description: "Style this React app with Tailwind",
+      isDone: false,
+    },
+    {
+      id: 2,
+      title: "Create a Portfolio Project",
+      description: "Use Tailwind for styling and deploy it",
+      isDone: true,
+    },
+  ]);
+
+  const deleteTask = (id) => {
+    setTasks((prev) => prev.filter((task) => task.id !== id));
+  };
+
+  const toggleDone = (id) => {
+    setTasks((prev) =>
+      prev.map((task) =>
+        task.id === id ? { ...task, isDone: !task.isDone } : task
+      )
+    );
+  };
+
+  return <TaskList tasks={tasks} deleteTask={deleteTask} toggleDone={toggleDone} />;
+};
 
 export default App;
