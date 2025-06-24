@@ -1,5 +1,6 @@
 import { useState } from "react";
 import TaskList from "./components/TaskList";
+import Header from "./components/Header";
 
 const App = () => {
   const [tasks, setTasks] = useState([
@@ -29,7 +30,18 @@ const App = () => {
     );
   };
 
-  return <TaskList tasks={tasks} deleteTask={deleteTask} toggleDone={toggleDone} />;
+  return (
+    <div className="min-h-screen bg-gray-100 font-sans">
+      <Header />
+      <main className="max-w-3xl mx-auto p-4">
+        <TaskList
+          tasks={tasks}
+          deleteTask={deleteTask}
+          toggleDone={toggleDone}
+        />
+      </main>
+    </div>
+  );
 };
 
 export default App;
