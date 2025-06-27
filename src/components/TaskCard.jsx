@@ -1,3 +1,4 @@
+// TaskCard.jsx
 const TaskCard = ({ title, description, isDone, onDelete, onToggle }) => {
   return (
     <div className={`bg-white border rounded-xl p-5 shadow-sm hover:shadow-md transition ${isDone ? 'opacity-70' : ''}`}>

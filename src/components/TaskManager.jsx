@@ -1,3 +1,4 @@
+// TaskManager.jsx
 import { useState } from "react";
 import TaskList from "./TaskList";
 import NewTaskForm from "./NewTaskForm";
@@ -40,17 +41,15 @@ const TaskManager = () => {
 
   return (
     <div className="max-w-2xl mx-auto p-6">
-        <h1 className="text-3xl font-extrabold text-center mb-8 text-indigo-600 bg-indigo-100 p-4 rounded">
-            Task Manager
-        </h1>
+        <div className="bg-white p-6 rounded-lg shadow">
+            <NewTaskForm addTask={addTask} />
+            <TaskList 
+            tasks={tasks} 
+            deleteTask={deleteTask} 
+            toggleDone={toggleDone} 
+            />
+        </div>
 
-      <NewTaskForm addTask={addTask} />
-
-      <TaskList 
-        tasks={tasks} 
-        deleteTask={deleteTask} 
-        toggleDone={toggleDone} 
-      />
     </div>
   );
 };
