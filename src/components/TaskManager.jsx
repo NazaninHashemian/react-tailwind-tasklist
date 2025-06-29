@@ -40,18 +40,19 @@ const TaskManager = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-100 via-white to-indigo-100 py-12">
-      <div className="max-w-2xl mx-auto p-6">
-        <div className="bg-white p-6 rounded-lg shadow">
-          <NewTaskForm addTask={addTask} />
-          <TaskList 
-            tasks={tasks} 
-            deleteTask={deleteTask} 
-            toggleDone={toggleDone} 
-          />
-        </div>
+    <div className="min-h-screen bg-gradient-to-br from-blue-600 via-white to-purple-50 py-10 px-4">
+      <div className="max-w-3xl mx-auto bg-white p-8 rounded-xl shadow-lg ring-1 ring-gray-200">
+        <h1 className="text-3xl font-extrabold text-center text-indigo-700 mb-8 tracking-tight">
+           My Task Manager
+        </h1>
+        <NewTaskForm addTask={addTask} />
+        <TaskList 
+          tasks={tasks} 
+          deleteTask={deleteTask} 
+          toggleDone={toggleDone} 
+        />
       </div>
-  </div>
+    </div>
   );
 };
 
