@@ -2,6 +2,7 @@
 import { useState } from "react";
 import TaskList from "./TaskList";
 import NewTaskForm from "./NewTaskForm";
+
 const TaskManager = () => {
   const [tasks, setTasks] = useState([
     {
@@ -41,30 +42,29 @@ const TaskManager = () => {
 
   return (
     <div className="min-h-screen relative py-10 px-4 bg-gradient-to-br from-blue-100 via-gray-100 to-purple-50">
-    {/* Background image */}
-    <div
-      className="absolute inset-0 bg-center bg-cover opacity-80"
-      style={{ backgroundImage: 'url("/images/photo1.avif")' }}
-      aria-hidden="true"
-    />
-
-    
-    {/* Overlay to darken background image */}
-    <div className="absolute inset-0 bg-white/40 backdrop-blur-sm" />
-
-    {/* Content */}
-    <div className="relative max-w-3xl mx-auto bg-white p-8 rounded-xl shadow-lg ring-1 ring-gray-200">
-      <h1 className="text-3xl font-extrabold text-center text-indigo-900 mb-8 tracking-tight">
-        My Task Manager
-      </h1>
-      <NewTaskForm addTask={addTask} />
-      <TaskList 
-        tasks={tasks} 
-        deleteTask={deleteTask} 
-        toggleDone={toggleDone} 
+      {/* Background image */}
+      <div
+        className="absolute inset-0 bg-center bg-cover opacity-80"
+        style={{ backgroundImage: 'url("/react-tailwind-tasklist/images/photo.avif")' }}
+        aria-hidden="true"
       />
+
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-white/30" />
+
+      {/* Content */}
+      <div className="relative max-w-3xl mx-auto bg-white p-8 rounded-xl shadow-lg ring-1 ring-gray-200">
+        <h1 className="text-3xl font-extrabold text-center text-indigo-900 mb-8 tracking-tight">
+          My Task Manager
+        </h1>
+        <NewTaskForm addTask={addTask} />
+        <TaskList
+          tasks={tasks}
+          deleteTask={deleteTask}
+          toggleDone={toggleDone}
+        />
+      </div>
     </div>
-  </div>
   );
 };
 
