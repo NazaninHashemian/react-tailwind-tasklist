@@ -50,7 +50,7 @@ const TaskManager = () => {
       />
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-white/30" />
+      <div className="absolute inset-0 bg-white/50" />
 
       {/* Content */}
       <div className="relative max-w-3xl mx-auto bg-white p-8 rounded-xl shadow-lg ring-1 ring-gray-200">
